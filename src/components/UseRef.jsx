@@ -1,5 +1,17 @@
-const UseRef = () => {
-  return <div>Hello from UseRef</div>;
-};
+import { Component, memo } from "react";
 
-export default UseRef;
+class UseRef extends Component {
+  componentDidMount() {
+    this.animate();
+  }
+
+  animate = () => {
+    requestAnimationFrame(this.animate);
+  };
+
+  render() {
+    return <div>Hell from UseRef</div>;
+  }
+}
+
+export default memo(UseRef);

@@ -3,8 +3,12 @@ export const NAV_MENU_CONFIG = {
     title: "Home",
     path: "/",
   },
+  memoization: {
+    title: "Memoization",
+    path: "/memo",
+  },
   useRef: {
-    title: "useRef",
+    title: "UseRef_And_THREE",
     path: "/useRef",
   },
 };
