@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import "./App.scss";
 
-function App() {
-  const [count, setCount] = useState(0);
+import Nav from "./Nav";
+import Home from "./components/Home";
+import UseRef from "./components/UseRef";
+// config
+import { NAV_MENU_CONFIG } from "./config/nav-menu.config";
 
+function App() {
   return (
-    <div className="container">
-      <div className="p-10 shadow rounded-bg  flex flex-col gap-5 items-center">
-        <h1 className="text-3xl text-center">Hello world</h1>
-        <button
-          className="bg-gray-800 text-white px-5 py-2 rounded-full"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
-        </button>
+    <div>
+      <Nav links={NAV_MENU_CONFIG} />
+      <div className="container mt-5">
+        <Routes>
+          <Route path={NAV_MENU_CONFIG.home.path} element={<Home />} />
+          <Route path={NAV_MENU_CONFIG.useRef.path} element={<UseRef />} />
+        </Routes>
       </div>
     </div>
   );
